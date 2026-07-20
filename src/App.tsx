@@ -430,7 +430,7 @@ function App() {
                 <p>{service.description}</p>
                 <p className="service-best-for">{service.bestFor}</p>
                 <a
-                  className="service-link"
+                  className="button service-link"
                   href={buildWhatsAppLink(buildServiceInquiryMessage(service.name))}
                   target="_blank"
                   rel="noreferrer"
