@@ -394,7 +394,7 @@ function App() {
           </article>
           <article>
             <strong>Productos premium</strong>
-            <p>Usamos insumos especializados para cuidar materiales y prolongar la vida util.</p>
+            <p>Usamos insumos especializados para cuidar materiales y prolongar la vida útil.</p>
           </article>
           <article>
             <strong>Secado seguro</strong>
