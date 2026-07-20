@@ -17,7 +17,7 @@ describe('App', () => {
   it('renders the core landing sections and service cards', () => {
     render(<App />)
 
-    expect(screen.getByRole('heading', { name: /devuelvele la vida/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /el cuidado que tus sneakers merecen/i })).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: /principal/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /tratamientos claros/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /un flujo simple/i })).toBeInTheDocument()
@@ -37,7 +37,7 @@ describe('App', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('button', { name: /que metodos de pago aceptan/i }))
+    await user.click(screen.getByRole('button', { name: /qué métodos de pago aceptan/i }))
 
     expect(trackEvent).toHaveBeenCalledWith('faq_open', { faq_id: 'faq-pagos' })
     expect(screen.getByText(/transferencias bancarias directas/i)).toBeInTheDocument()
@@ -47,12 +47,12 @@ describe('App', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('button', { name: /resultado real recuperacion de uso diario/i }))
+    await user.click(screen.getByRole('button', { name: /resultado real recuperación de uso diario/i }))
 
     expect(trackEvent).toHaveBeenCalledWith('before_after_interaction', {
       showcase_id: 'pair-case',
     })
-    expect(screen.getByRole('img', { name: /recuperacion de uso diario/i })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /recuperación de uso diario/i })).toBeInTheDocument()
   })
 
   it('sends analytics when the main whatsapp cta is clicked', async () => {
