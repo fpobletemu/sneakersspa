@@ -541,13 +541,13 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 22px;
 }
 
 .service-card {
   display: grid;
-  gap: 16px;
-  padding: 22px;
+  gap: 18px;
+  padding: 24px;
   background:
     radial-gradient(circle at top right, rgba(126, 234, 246, 0.22), transparent 42%),
     var(--color-white);
@@ -596,14 +596,14 @@
   justify-self: start;
   align-self: end;
   width: fit-content;
-  min-height: 46px;
-  padding-inline: 18px;
-  border: 1px solid rgba(25, 201, 232, 0.36);
-  background: linear-gradient(180deg, rgba(25, 201, 232, 0.18), rgba(25, 201, 232, 0.1));
-  color: var(--color-primary-dark);
+  min-height: 48px;
+  padding-inline: 20px;
+  border: 1px solid rgba(25, 201, 232, 0.42);
+  background: var(--gradient-primary);
+  color: var(--color-black);
   font-size: 0.94rem;
-  letter-spacing: 0;
-  box-shadow: 0 10px 22px rgba(25, 201, 232, 0.1);
+  letter-spacing: 0.01em;
+  box-shadow: 0 14px 26px rgba(17, 179, 214, 0.18);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -614,10 +614,8 @@
 
 .service-link:hover {
   transform: translateY(-1px);
-  background: linear-gradient(180deg, rgba(25, 201, 232, 0.24), rgba(25, 201, 232, 0.14));
   border-color: rgba(25, 201, 232, 0.5);
-  box-shadow: 0 14px 28px rgba(25, 201, 232, 0.14);
-  color: var(--color-black);
+  box-shadow: 0 18px 30px rgba(17, 179, 214, 0.24);
 }
 
 .addon-panel {
@@ -721,7 +719,7 @@
 .coverage-section,
 .site-footer {
   display: grid;
-  gap: 18px;
+  gap: 24px;
 }
 
 .insights-layout,
@@ -732,24 +730,24 @@
 .insight-panel,
 .conditions-panel,
 .coverage-card {
-  padding: 28px;
+  padding: 32px;
 }
 
 .insight-panel {
   display: grid;
-  gap: 18px;
+  gap: 22px;
 }
 
 .insight-panel h3 {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .insight-panel .social-proof-grid {
-  gap: 14px;
+  gap: 16px;
 }
 
 .insight-panel .social-proof-card {
-  padding: 18px 20px;
+  padding: 22px;
 }
 
 .social-proof-grid,
@@ -760,8 +758,8 @@
 .social-proof-card,
 .care-guide-card {
   display: grid;
-  gap: 10px;
-  padding: 20px;
+  gap: 12px;
+  padding: 22px;
   border-radius: 22px;
   border: 1px solid rgba(13, 13, 13, 0.08);
   background: linear-gradient(180deg, rgba(126, 234, 246, 0.14), rgba(255, 255, 255, 1));
@@ -997,8 +995,8 @@
   }
 
   .insight-panel {
-    gap: 16px;
-    padding: 26px;
+    gap: 18px;
+    padding: 28px;
   }
 }
 
@@ -1130,7 +1128,7 @@
 
   .insight-panel {
     gap: 14px;
-    padding: 22px;
+    padding: 24px;
   }
 
   .insight-panel h3 {
@@ -1138,7 +1136,7 @@
   }
 
   .insight-panel .social-proof-card {
-    padding: 16px 18px;
+    padding: 18px;
   }
 
   .services-grid,
