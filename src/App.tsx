@@ -9,78 +9,78 @@ import { initAnalytics, trackEvent, trackPageView } from './lib/analytics'
 const services = [
   {
     id: 'limpieza-estandar',
-    name: 'Limpieza Estandar',
+    name: 'Limpieza estándar',
     price: '$9.990',
     description:
-      'Limpieza exterior rapida para capellada, entresuela y cordones en uso diario.',
+      'Limpieza exterior rápida para capellada, entresuela y cordones en uso diario.',
     bestFor: 'Ideal para polvo, suciedad leve y mantenimiento regular.',
     badge: 'Entrada',
   },
   {
     id: 'limpieza-profunda',
-    name: 'Limpieza Profunda',
+    name: 'Limpieza profunda',
     price: '$12.990',
     description:
-      'Sanitizacion integral por dentro y por fuera con foco en suela, interior y olores.',
+      'Sanitización integral por dentro y por fuera, con foco en suela, interior y olores.',
     bestFor: 'Para uso prolongado, manchas acumuladas y suciedad incrustada.',
-    badge: 'Mas pedido',
+    badge: 'Más pedido',
   },
   {
     id: 'gamuza-nobuck-estandar',
-    name: 'Gamuza y Nobuck Estandar',
+    name: 'Gamuza y nobuck estándar',
     price: '$14.990',
     description:
       'Tratamiento en seco para preservar textura, color y acabado delicado.',
-    bestFor: 'Recomendado para mantener gamuza limpia, peinada y uniforme.',
+    bestFor: 'Recomendado para mantener la gamuza limpia, peinada y uniforme.',
     badge: 'Material delicado',
   },
   {
     id: 'gamuza-profunda',
-    name: 'Gamuza Profunda',
+    name: 'Gamuza profunda',
     price: '$17.990',
     description:
-      'Shampoo especializado y protector impermeabilizante anti-manchas.',
-    bestFor: 'Cuando la gamuza necesita rescate y proteccion adicional.',
+      'Shampoo especializado y protector impermeabilizante antimanchas.',
+    bestFor: 'Cuando la gamuza necesita rescate y protección adicional.',
     badge: 'Premium',
   },
   {
     id: 'unyellowing',
-    name: 'Servicio Unyellowing',
+    name: 'Servicio unyellowing',
     price: '$15.990',
     description:
-      'Proceso quimico y termico para revertir oxidacion en suelas amarillentas.',
-    bestFor: 'Pensado para devolver tono limpio a gomas envejecidas.',
-    badge: 'Restauracion',
+      'Proceso químico y térmico para revertir la oxidación en suelas amarillentas.',
+    bestFor: 'Pensado para devolver un tono limpio a gomas envejecidas.',
+    badge: 'Restauración',
   },
 ] as const
 
 const addOns = [
-  'Restauracion y coloracion de cuero desde $5.990.',
+  'Restauración y coloración de cuero desde $5.990.',
   'Cambio o lavado premium de cordones entre $2.990 y $4.990.',
-  'Desinfeccion y eliminacion extrema de olores con tratamiento germicida.',
-  'Reparacion estructural ligera para despegues puntuales y bordes.',
+  'Desinfección y eliminación extrema de olores con tratamiento germicida.',
+  'Reparación estructural ligera para despegues puntuales y bordes.',
 ] as const
 
 const processSteps = [
   {
     title: 'Agenda',
     description:
-      'Cuentanos por WhatsApp el tipo de zapatilla, servicio que te interesa y comuna.',
+      'Cuéntanos por WhatsApp el tipo de zapatilla, el servicio que te interesa y la comuna.',
   },
   {
     title: 'Coordinamos retiro',
     description:
-      'Definimos punto de encuentro en Metro o entrega en sucursal segun tu ubicacion.',
+      'Definimos punto de encuentro en Metro o entrega en sucursal según tu ubicación.',
   },
   {
     title: 'Tratamos tu par',
     description:
-      'Aplicamos limpieza, sanitizacion o restauracion segun material y estado real.',
+      'Aplicamos limpieza, sanitización o restauración según el material y el estado real.',
   },
   {
     title: 'Entregamos listo',
     description:
-      'Tiempo estimado de 3 a 5 dias habiles, sujeto al nivel de suciedad o dano.',
+      'Tiempo estimado de 3 a 5 días hábiles, sujeto al nivel de suciedad o daño.',
   },
 ] as const
 
@@ -89,48 +89,48 @@ const showcaseCases = [
     id: 'hero-case',
     title: 'Caso de limpieza profunda',
     image: beforeAfterHero,
-    label: 'Antes y despues',
+    label: 'Antes y después',
     description:
-      'Un caso ideal para mostrar la diferencia entre suciedad extrema y recuperacion visual.',
+      'Un caso ideal para mostrar la diferencia entre suciedad extrema y recuperación visual.',
   },
   {
     id: 'pair-case',
-    title: 'Recuperacion de uso diario',
+    title: 'Recuperación de uso diario',
     image: beforeAfterPair,
     label: 'Resultado real',
     description:
-      'Comparativa pensada para demostrar blancos mas limpios, cordones prolijos y mejor presencia.',
+      'Comparativa pensada para demostrar blancos más limpios, cordones prolijos y mejor presencia.',
   },
 ] as const
 
 const faqs = [
   {
     id: 'faq-entrega',
-    question: 'Cuanto tiempo se demoran en entregar mis zapatillas?',
+    question: '¿Cuánto tiempo se demoran en entregar mis zapatillas?',
     answer:
-      'El tiempo estimado es de 3 a 5 dias habiles, dependiendo del tratamiento y del nivel de suciedad o dano.',
+      'El tiempo estimado es de 3 a 5 días hábiles, dependiendo del tratamiento y del nivel de suciedad o daño.',
   },
   {
     id: 'faq-pagos',
-    question: 'Que metodos de pago aceptan?',
+    question: '¿Qué métodos de pago aceptan?',
     answer: 'Actualmente trabajamos con transferencias bancarias directas.',
   },
   {
     id: 'faq-retiro',
-    question: 'Como funciona el retiro y delivery?',
+    question: '¿Cómo funciona el retiro y la entrega?',
     answer:
-      'Coordinamos puntos de encuentro desde Hospital Sotero del Rio hasta Mirador por $2.000 y retiro gratuito en La Florida o Puente Alto previa coordinacion.',
+      'Coordinamos puntos de encuentro desde Hospital Sotero del Río hasta Mirador por $2.000, y retiro gratuito en La Florida o Puente Alto, previa coordinación.',
   },
   {
     id: 'faq-materiales',
-    question: 'Trabajan cuero, gamuza y nobuck?',
+    question: '¿Trabajan cuero, gamuza y nobuck?',
     answer:
-      'Si. Cada material requiere un tratamiento distinto, por eso evaluamos el par antes de definir el proceso adecuado.',
+      'Sí. Cada material requiere un tratamiento distinto, por eso evaluamos el par antes de definir el proceso adecuado.',
   },
 ] as const
 
 const trustPoints = [
-  'Atencion por WhatsApp con respuesta rapida.',
+  'Atención por WhatsApp con respuesta rápida.',
   'Retiro coordinado en Metro y entrega gratuita en zonas definidas.',
   'Cuidado especializado para cuero, gamuza, nobuck y suelas.',
 ] as const
@@ -139,12 +139,12 @@ const socialLinks = [
   {
     name: 'Instagram',
     href: 'https://www.instagram.com/thesneakerspa.cl/',
-    caption: 'Antes y despues, procesos y resultados en formato corto.',
+    caption: 'Antes y después, procesos y resultados en formato corto.',
   },
   {
     name: 'TikTok',
     href: 'https://www.tiktok.com/@sneakers.spa.cl',
-    caption: 'Contenido visual para mostrar limpieza, restauracion y detalles.',
+    caption: 'Contenido visual para mostrar limpieza, restauración y detalles.',
   },
 ] as const
 
@@ -152,24 +152,24 @@ const careGuide = [
   {
     title: 'Antes de entregar tu par',
     description:
-      'Escribe por WhatsApp indicando material, nivel de suciedad y si existe despegue, manchas antiguas o suelas amarillentas.',
+      'Escribe por WhatsApp indicando el material, el nivel de suciedad y si existe despegue, manchas antiguas o suelas amarillentas.',
   },
   {
-    title: 'Cuando conviene limpieza profunda',
+    title: 'Cuándo conviene la limpieza profunda',
     description:
-      'Si hay olor, suciedad interna, suela marcada o uso prolongado, la limpieza profunda evita una recuperacion superficial.',
+      'Si hay olor, suciedad interna, suela marcada o uso prolongado, la limpieza profunda evita una recuperación superficial.',
   },
   {
-    title: 'Que esperar de una restauracion',
+    title: 'Qué esperar de una restauración',
     description:
-      'La mejora depende de desgaste, material y antiguedad. Se evalua cada par antes de confirmar el servicio final.',
+      'La mejora depende del desgaste, el material y la antigüedad. Se evalúa cada par antes de confirmar el servicio final.',
   },
 ] as const
 
 const serviceConditions = [
-  'La evaluacion previa se realiza por WhatsApp para definir el tratamiento adecuado.',
-  'Los tiempos de entrega pueden variar segun material, nivel de suciedad y reparaciones adicionales.',
-  'Las manchas antiguas, peladuras severas o oxidaciones profundas pueden mejorar sin desaparecer al 100%.',
+  'La evaluación previa se realiza por WhatsApp para definir el tratamiento adecuado.',
+  'Los tiempos de entrega pueden variar según el material, el nivel de suciedad y las reparaciones adicionales.',
+  'Las manchas antiguas, peladuras severas u oxidaciones profundas pueden mejorar sin desaparecer al 100%.',
   'El retiro en estaciones fuera del tramo definido se revisa caso a caso antes de confirmar.',
 ] as const
 
@@ -188,7 +188,7 @@ const contactLinks = [
 
 const navLinks = [
   { href: '#servicios', label: 'Servicios' },
-  { href: '#proceso', label: 'Como funciona' },
+  { href: '#proceso', label: 'Cómo funciona' },
   { href: '#faq', label: 'Preguntas' },
   { href: '#contacto', label: 'Contacto' },
 ] as const
@@ -286,7 +286,7 @@ function App() {
       </a>
 
       <div className="announcement-bar">
-        <p>Agenda por WhatsApp, coordina retiro y recibe tu par listo entre 3 y 5 dias habiles.</p>
+        <p>Agenda por WhatsApp, coordina retiro y recibe tu par listo entre 3 y 5 días hábiles.</p>
       </div>
 
       <header className="site-header" id="inicio">
@@ -299,7 +299,7 @@ function App() {
           className={isMenuOpen ? 'menu-toggle open' : 'menu-toggle'}
           aria-expanded={isMenuOpen}
           aria-controls="site-navigation"
-          aria-label={isMenuOpen ? 'Cerrar menu' : 'Abrir menu'}
+          aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           onClick={() => setIsMenuOpen((current) => !current)}
         >
           <span></span>
@@ -334,26 +334,26 @@ function App() {
       <button
         type="button"
         className={isMenuOpen ? 'menu-backdrop visible' : 'menu-backdrop'}
-        aria-label="Cerrar menu"
+        aria-label="Cerrar menú"
         onClick={closeMenu}
       />
 
       <main id="contenido-principal">
         <section className="hero-section section-frame">
           <div className="hero-copy">
-            <p className="eyebrow">Limpieza, restauracion y cuidado profesional</p>
+            <p className="eyebrow">Limpieza, restauración y cuidado profesional</p>
             <h1>
               El cuidado que <span className="hero-highlight">tus sneakers</span> merecen.
             </h1>
             <p className="hero-text">
-              Devolvemos a tus zapatillas su mejor version con limpieza profunda y
+              Devolvemos a tus zapatillas su mejor versión con limpieza profunda y
               productos premium.
             </p>
 
             <div className="hero-actions">
               <a
                 className="button button-primary"
-                href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero cotizar limpieza o restauracion para mis zapatillas.')}
+                  href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero cotizar limpieza o restauración para mis zapatillas.')}
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => handleWhatsAppClick('hero')}
@@ -374,7 +374,7 @@ function App() {
 
           <div className="hero-visual">
             <div className="hero-media-card">
-              <span className="media-pill">Antes y despues real</span>
+              <span className="media-pill">Antes y después real</span>
               <img
                 src={beforeAfterPair}
                 alt="Par de zapatillas con contraste entre limpieza previa y resultado final"
@@ -409,7 +409,7 @@ function App() {
         <section className="section-frame services-section" id="servicios">
           <div className="section-heading">
             <p className="eyebrow">Nuestros servicios</p>
-            <h2>Tratamientos claros para distintos niveles de suciedad y restauracion.</h2>
+            <h2>Tratamientos claros para distintos niveles de suciedad y restauración.</h2>
             <p>
               Cada servicio responde a un problema especifico. La idea no es vender de mas,
               sino derivarte al tratamiento que realmente necesita tu par.
@@ -446,8 +446,8 @@ function App() {
 
           <div className="addon-panel">
             <div>
-              <p className="eyebrow">Adicionales y restauracion</p>
-              <h3>Complementos pensados para recuperar presencia y duracion.</h3>
+              <p className="eyebrow">Adicionales y restauración</p>
+                <h3>Complementos pensados para recuperar presencia y durabilidad.</h3>
             </div>
             <ul>
               {addOns.map((item) => (
@@ -459,10 +459,10 @@ function App() {
 
         <section className="section-frame showcase-section">
           <div className="section-heading">
-            <p className="eyebrow">Antes y despues</p>
+            <p className="eyebrow">Antes y después</p>
             <h2>El resultado tiene que verse antes de pedir confianza.</h2>
             <p>
-              Este v1 prioriza evidencia visual y mensajes concretos por encima de claims vacios.
+              Esta versión prioriza evidencia visual y mensajes concretos por encima de promesas vacías.
             </p>
           </div>
 
@@ -491,7 +491,7 @@ function App() {
                 <p>{selectedShowcase.description}</p>
                 <a
                   className="button button-secondary"
-                  href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero enviar fotos de mis zapatillas para evaluacion.')}
+                  href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero enviar fotos de mis zapatillas para evaluación.')}
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => handleWhatsAppClick('showcase')}
@@ -505,7 +505,7 @@ function App() {
 
         <section className="section-frame process-section" id="proceso">
           <div className="section-heading narrow">
-            <p className="eyebrow">Como funciona</p>
+            <p className="eyebrow">Cómo funciona</p>
             <h2>Un flujo simple para no perder tiempo coordinando.</h2>
           </div>
 
@@ -522,7 +522,7 @@ function App() {
 
         <section className="section-frame insights-section" aria-labelledby="insights-title">
           <div className="section-heading narrow">
-            <p className="eyebrow">Confianza y guia</p>
+            <p className="eyebrow">Confianza y guía</p>
             <h2 id="insights-title">Lo que conviene saber antes de coordinar tu servicio.</h2>
           </div>
 
@@ -548,7 +548,7 @@ function App() {
             </article>
 
             <article className="insight-panel">
-              <p className="eyebrow">Mini guia</p>
+              <p className="eyebrow">Mini guía</p>
               <h3>Expectativas correctas generan mejores resultados.</h3>
               <div className="care-guide-grid">
                 {careGuide.map((item) => (
@@ -565,18 +565,18 @@ function App() {
         <section className="section-frame coverage-section">
           <div className="coverage-card">
             <p className="eyebrow">Cobertura y retiro</p>
-            <h2>La logistica tambien tiene que ser clara.</h2>
+            <h2>La logística también tiene que ser clara.</h2>
             <p>
-              Puntos de encuentro desde Hospital Sotero del Rio hasta Mirador por
-              $2.000. Retiro gratuito en La Florida y Puente Alto previa coordinacion.
+              Puntos de encuentro desde Hospital Sotero del Río hasta Mirador por
+              $2.000. Retiro gratuito en La Florida y Puente Alto, previa coordinación.
             </p>
           </div>
           <div className="coverage-card accent">
-            <p className="eyebrow">Materiales y limites</p>
-            <h2>Tratamos cada par segun material, desgaste y posibilidad real de mejora.</h2>
+            <p className="eyebrow">Materiales y límites</p>
+            <h2>Tratamos cada par según el material, el desgaste y la posibilidad real de mejora.</h2>
             <p>
-              No todos los danos revierten igual. Por eso la evaluacion por WhatsApp antes de
-              confirmar el trabajo es parte central del proceso.
+              No todos los daños revierten igual. Por eso la evaluación por WhatsApp, antes de
+              confirmar el trabajo, es parte central del proceso.
             </p>
           </div>
         </section>
@@ -584,7 +584,7 @@ function App() {
         <section className="section-frame conditions-section" aria-labelledby="conditions-title">
           <div className="section-heading narrow">
             <p className="eyebrow">Condiciones del servicio</p>
-            <h2 id="conditions-title">Un servicio serio necesita limites y criterios claros.</h2>
+            <h2 id="conditions-title">Un servicio serio necesita límites y criterios claros.</h2>
           </div>
 
           <div className="conditions-panel">
@@ -599,7 +599,7 @@ function App() {
         <section className="section-frame faq-section" id="faq">
           <div className="section-heading">
             <p className="eyebrow">Preguntas frecuentes</p>
-            <h2>Respuestas directas para bajar friccion antes de agendar.</h2>
+            <h2>Respuestas directas para bajar fricción antes de agendar.</h2>
           </div>
 
           <div className="faq-list">
@@ -632,8 +632,8 @@ function App() {
 
         <section className="cta-band section-frame">
           <div>
-            <p className="eyebrow">Listo para coordinar?</p>
-            <h2>Tus sneakers en las mejores manos, con respuesta rapida por WhatsApp.</h2>
+            <p className="eyebrow">¿Listo para coordinar?</p>
+            <h2>Tus sneakers en las mejores manos, con respuesta rápida por WhatsApp.</h2>
           </div>
           <a
             className="button button-primary"
@@ -649,10 +649,10 @@ function App() {
 
       <footer className="site-footer section-frame" id="contacto">
         <div className="footer-brand">
-          <img src={logoTagline} alt="Logo Sneakers' Spa con subtitulo" />
+          <img src={logoTagline} alt="Logo de Sneakers' Spa con subtítulo" />
           <p>
             Cuidado profesional para zapatillas con foco en limpieza visible,
-            materiales delicados y coordinacion clara.
+            materiales delicados y coordinación clara.
           </p>
         </div>
 
@@ -690,7 +690,7 @@ function App() {
                 </a>
               </li>
             ))}
-            <li>Lunes a Viernes, 09:00 a 19:00 hrs.</li>
+            <li>Lunes a viernes, de 09:00 a 19:00 hrs.</li>
           </ul>
         </div>
 
