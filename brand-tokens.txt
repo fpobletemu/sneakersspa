@@ -1,0 +1,56 @@
+Colores
+Primary
+
+#19C9E8
+Primary Hover
+
+#12B5D2
+Primary Light
+
+#7EEAF6
+Black
+
+#0D0D0D
+Dark Gray
+
+#2D2D2D
+Gray
+
+#6E6E6E
+Light Gray
+
+#D8D8D8
+White
+
+#FFFFFF
+Gradiente principal
+CSS
+linear-gradient(90deg, #16D3E8 0%, #20C8E8 50%, #11B3D6 100%);
+Tipografías
+Títulos
+Bebas Neue
+
+Usar para:
+
+Hero
+H1
+H2
+Títulos de sección
+Precios
+Texto
+Manrope
+
+Pesos:
+
+400 Regular
+500 Medium
+600 SemiBold
+700 Bold
+Usar para:
+
+Menús
+Párrafos
+Botones
+Tarjetas
+Formularios
+FAQ

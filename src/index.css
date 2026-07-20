@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-primary: #19c9e8;
+  --color-primary-dark: #12b5d2;
+  --color-primary-light: #7eeaf6;
+  --color-black: #0d0d0d;
+  --color-dark-gray: #2d2d2d;
+  --color-gray: #6e6e6e;
+  --color-light-gray: #d8d8d8;
+  --color-white: #ffffff;
+  --gradient-primary: linear-gradient(90deg, #16d3e8 0%, #20c8e8 50%, #11b3d6 100%);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  color: var(--color-black);
+  background:
+    radial-gradient(circle at top left, rgba(126, 234, 246, 0.28), transparent 28%),
+    radial-gradient(circle at top right, rgba(25, 201, 232, 0.12), transparent 30%),
+    #fcfefe;
+  font: 16px/1.6 var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 116px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
