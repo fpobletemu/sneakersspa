@@ -593,9 +593,36 @@
 
 .service-link {
   display: inline-flex;
+  align-items: center;
   justify-self: start;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(25, 201, 232, 0.28);
+  border-radius: 999px;
+  background: rgba(25, 201, 232, 0.08);
+  color: var(--color-primary-dark);
   text-decoration: none;
   font-weight: 800;
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.service-link::after {
+  content: '→';
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.service-link:hover {
+  transform: translateY(-1px);
+  background: rgba(25, 201, 232, 0.14);
+  border-color: rgba(25, 201, 232, 0.38);
+  color: var(--color-black);
 }
 
 .addon-panel {
