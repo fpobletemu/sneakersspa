@@ -21,10 +21,12 @@ const imageRules = {
   'logo-tagline.png': {
     width: 900,
     quality: 92,
+    trim: true,
   },
   'logo-wordmark.png': {
     width: 900,
     quality: 92,
+    trim: true,
   },
 }
 
@@ -32,7 +34,13 @@ const optimizeImage = async (fileName, options) => {
   const inputPath = path.join(imageDir, fileName)
   const outputPath = path.join(imageDir, fileName.replace(/\.png$/i, '.webp'))
 
-  await sharp(inputPath)
+  let pipeline = sharp(inputPath)
+
+  if (options.trim) {
+    pipeline = pipeline.trim()
+  }
+
+  await pipeline
     .resize({
       width: options.width,
       withoutEnlargement: true,
