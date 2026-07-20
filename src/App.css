@@ -846,7 +846,7 @@
 
 @media (max-width: 960px) {
   .site-header {
-    padding: 14px 16px;
+    padding: 12px 14px;
   }
 
   .menu-toggle {
@@ -902,11 +902,45 @@
 
 @media (max-width: 760px) {
   .announcement-bar {
-    font-size: 0.84rem;
+    font-size: 0.78rem;
   }
 
   .brand-mark img {
-    width: min(180px, 52vw);
+    width: min(138px, 46vw);
+  }
+
+  .site-header {
+    top: 8px;
+    gap: 12px;
+    border-radius: 20px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .menu-toggle span {
+    left: 10px;
+    width: 20px;
+  }
+
+  .menu-toggle span:nth-child(1) {
+    top: 13px;
+  }
+
+  .menu-toggle span:nth-child(2) {
+    top: 20px;
+  }
+
+  .menu-toggle span:nth-child(3) {
+    top: 27px;
+  }
+
+  .menu-toggle.open span:nth-child(1),
+  .menu-toggle.open span:nth-child(3) {
+    top: 20px;
   }
 
   .hero-section,
@@ -921,13 +955,25 @@
     padding-top: 56px;
   }
 
+  .hero-section {
+    gap: 26px;
+  }
+
   .hero-copy h1 {
-    font-size: clamp(2.7rem, 15vw, 4.3rem);
+    font-size: clamp(2.4rem, 14vw, 3.8rem);
+  }
+
+  .hero-text {
+    font-size: 0.94rem;
   }
 
   .hero-actions,
   .cta-band {
     display: grid;
+  }
+
+  .hero-actions {
+    gap: 12px;
   }
 
   .hero-actions .button,
@@ -953,6 +999,21 @@
   .media-pill {
     left: 16px;
     top: 16px;
+  }
+
+  .trust-list {
+    gap: 12px;
+  }
+
+  .trust-list li {
+    font-size: 0.72rem;
+    padding-top: 12px;
+  }
+
+  .trust-list li::before {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
   }
 
   .services-grid,
