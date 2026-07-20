@@ -342,24 +342,26 @@ function App() {
         <section className="hero-section section-frame">
           <div className="hero-copy">
             <p className="eyebrow">Limpieza, restauracion y cuidado profesional</p>
-            <h1>Devuelvele la vida a tus zapatillas favoritas.</h1>
+            <h1>
+              El cuidado que <span className="hero-highlight">tus sneakers</span> merecen.
+            </h1>
             <p className="hero-text">
-              Tratamientos especializados para cuero, gamuza, nobuck y suelas con
-              retiro coordinado en Chile y atencion rapida por WhatsApp.
+              Devolvemos a tus zapatillas su mejor version con limpieza profunda y
+              productos premium.
             </p>
 
             <div className="hero-actions">
-              <a className="button button-primary" href="#servicios">
-                Ver servicios y precios
-              </a>
               <a
-                className="button button-secondary"
+                className="button button-primary"
                 href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero cotizar limpieza o restauracion para mis zapatillas.')}
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => handleWhatsAppClick('hero')}
               >
-                Agendar por WhatsApp
+                Agenda tu servicio
+              </a>
+              <a className="button button-secondary" href="#servicios">
+                Ver servicios
               </a>
             </div>
 
@@ -387,22 +389,26 @@ function App() {
 
         <section className="benefits-strip section-frame" aria-label="Ventajas clave">
           <article>
-            <strong>Sanitizacion integral</strong>
-            <p>Interior, exterior, suela y detalles segun el estado real del par.</p>
+            <strong>Limpieza profunda</strong>
+            <p>Eliminamos suciedad incrustada, manchas y olores para recuperar presencia.</p>
           </article>
           <article>
-            <strong>Tratamiento por material</strong>
-            <p>Procesos distintos para cuero, gamuza, nobuck y gomas delicadas.</p>
+            <strong>Productos premium</strong>
+            <p>Usamos insumos especializados para cuidar materiales y prolongar la vida util.</p>
           </article>
           <article>
-            <strong>Conversion simple</strong>
-            <p>WhatsApp como canal principal para agendar, resolver dudas y coordinar retiro.</p>
+            <strong>Secado seguro</strong>
+            <p>Controlamos el secado para proteger forma, color y materiales delicados.</p>
+          </article>
+          <article>
+            <strong>Cuidado especializado</strong>
+            <p>Atencion dedicada a cuero, gamuza, nobuck y combinaciones sensibles.</p>
           </article>
         </section>
 
         <section className="section-frame services-section" id="servicios">
           <div className="section-heading">
-            <p className="eyebrow">Servicios y tarifas</p>
+            <p className="eyebrow">Nuestros servicios</p>
             <h2>Tratamientos claros para distintos niveles de suciedad y restauracion.</h2>
             <p>
               Cada servicio responde a un problema especifico. La idea no es vender de mas,
@@ -453,7 +459,7 @@ function App() {
 
         <section className="section-frame showcase-section">
           <div className="section-heading">
-            <p className="eyebrow">Prueba visual</p>
+            <p className="eyebrow">Antes y despues</p>
             <h2>El resultado tiene que verse antes de pedir confianza.</h2>
             <p>
               Este v1 prioriza evidencia visual y mensajes concretos por encima de claims vacios.
@@ -627,7 +633,7 @@ function App() {
         <section className="cta-band section-frame">
           <div>
             <p className="eyebrow">Listo para coordinar?</p>
-            <h2>Tus sneakers en mejores manos, sin formularios pesados ni pasos innecesarios.</h2>
+            <h2>Tus sneakers en las mejores manos, con respuesta rapida por WhatsApp.</h2>
           </div>
           <a
             className="button button-primary"
@@ -636,7 +642,7 @@ function App() {
             rel="noreferrer"
             onClick={() => handleWhatsAppClick('cta-band')}
           >
-            Agenda por WhatsApp
+            Agenda ahora
           </a>
         </section>
       </main>
