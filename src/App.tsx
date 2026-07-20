@@ -186,12 +186,20 @@ const contactLinks = [
   },
 ] as const
 
+const navLinks = [
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#proceso', label: 'Como funciona' },
+  { href: '#faq', label: 'Preguntas' },
+  { href: '#contacto', label: 'Contacto' },
+] as const
+
 const buildWhatsAppLink = (message: string) =>
   `https://wa.me/56988204697?text=${encodeURIComponent(message)}`
 
 function App() {
   const [openFaq, setOpenFaq] = useState<string>(faqs[0].id)
   const [activeShowcase, setActiveShowcase] = useState<string>(showcaseCases[0].id)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const selectedShowcase = useMemo(
     () =>
@@ -235,6 +243,21 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (!isMenuOpen) {
+      document.body.style.removeProperty('overflow')
+      return
+    }
+
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.removeProperty('overflow')
+    }
+  }, [isMenuOpen])
+
+  const closeMenu = () => setIsMenuOpen(false)
+
   const handleWhatsAppClick = (location: string, service?: string) => {
     trackEvent('cta_whatsapp_click', {
       location,
@@ -271,23 +294,49 @@ function App() {
           <img src={logoWordmark} alt="Sneakers' Spa" />
         </a>
 
-        <nav className="site-nav" aria-label="Principal">
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Como funciona</a>
-          <a href="#faq">Preguntas</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-
-        <a
-          className="button button-primary header-cta"
-          href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero agendar un servicio para mis zapatillas.')}
-          target="_blank"
-          rel="noreferrer"
-          onClick={() => handleWhatsAppClick('header')}
+        <button
+          type="button"
+          className={isMenuOpen ? 'menu-toggle open' : 'menu-toggle'}
+          aria-expanded={isMenuOpen}
+          aria-controls="site-navigation"
+          aria-label={isMenuOpen ? 'Cerrar menu' : 'Abrir menu'}
+          onClick={() => setIsMenuOpen((current) => !current)}
         >
-          Agendar ahora
-        </a>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div className={isMenuOpen ? 'header-actions open' : 'header-actions'}>
+          <nav className="site-nav" id="site-navigation" aria-label="Principal">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} onClick={closeMenu}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <a
+            className="button button-primary header-cta"
+            href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero agendar un servicio para mis zapatillas.')}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => {
+              closeMenu()
+              handleWhatsAppClick('header')
+            }}
+          >
+            Agendar ahora
+          </a>
+        </div>
       </header>
+
+      <button
+        type="button"
+        className={isMenuOpen ? 'menu-backdrop visible' : 'menu-backdrop'}
+        aria-label="Cerrar menu"
+        onClick={closeMenu}
+      />
 
       <main id="contenido-principal">
         <section className="hero-section section-frame">
