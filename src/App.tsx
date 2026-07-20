@@ -439,7 +439,6 @@ function App() {
                     handleWhatsAppClick('services', service.id)
                   }}
                 >
-                  <span aria-hidden="true">✦</span>
                   Agendar este servicio
                 </a>
               </article>

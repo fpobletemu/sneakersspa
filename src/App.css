@@ -595,7 +595,7 @@
   display: inline-flex;
   align-items: center;
   justify-self: start;
-  gap: 9px;
+  width: fit-content;
   min-height: 44px;
   padding: 0 18px;
   border: 1px solid rgba(25, 201, 232, 0.34);
@@ -611,18 +611,6 @@
     background-color 0.2s ease,
     border-color 0.2s ease,
     color 0.2s ease;
-}
-
-.service-link::after {
-  content: '→';
-  font-size: 1rem;
-  line-height: 1;
-}
-
-.service-link span {
-  color: var(--color-primary-dark);
-  font-size: 0.75rem;
-  line-height: 1;
 }
 
 .service-link:hover {
