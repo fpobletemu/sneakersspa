@@ -405,7 +405,7 @@ function App() {
           </article>
           <article>
             <strong>Cuidado especializado</strong>
-            <p>Atencion dedicada a cuero, gamuza, nobuck y combinaciones sensibles.</p>
+            <p>Atención dedicada a cuero, gamuza, nobuck y combinaciones sensibles.</p>
           </article>
         </section>
 
@@ -414,7 +414,7 @@ function App() {
             <p className="eyebrow">Nuestros servicios</p>
             <h2>Tratamientos claros para distintos niveles de suciedad y restauración.</h2>
             <p>
-              Cada servicio responde a un problema especifico. La idea no es vender de mas,
+              Cada servicio responde a un problema específico. La idea no es vender de más,
               sino derivarte al tratamiento que realmente necesita tu par.
             </p>
           </div>
