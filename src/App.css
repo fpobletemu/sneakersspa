@@ -34,6 +34,44 @@
 .announcement-bar p {
   max-width: 72ch;
   margin: 0 auto;
+  overflow: hidden;
+}
+.page-shell {
+  position: relative;
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at top left, rgba(126, 234, 246, 0.14), transparent 26%),
+    linear-gradient(180deg, #ffffff 0%, #fbfeff 100%);
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 50;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.announcement-bar {
+  padding: 8px 16px;
+  background: var(--gradient-primary);
+  color: var(--color-black);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.announcement-bar p {
+  max-width: 72ch;
+  margin: 0 auto;
 }
 
 .section-frame {
@@ -229,19 +267,21 @@
 .care-guide-card p,
 .conditions-panel li {
   color: var(--color-gray);
+  line-height: 1.7;
 }
 
 .hero-text {
   max-width: 56ch;
   font-size: 0.98rem;
   line-height: 1.62;
+  margin-top: 10px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin: 28px 0 24px;
+  margin: 26px 0 22px;
 }
 
 .button {
@@ -294,7 +334,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   padding: 0;
-  margin: 0;
+  margin: 6px 0 0;
   list-style: none;
 }
 
@@ -324,16 +364,18 @@
 .hero-visual {
   position: relative;
   padding: 10px 0 22px;
+  overflow: hidden;
 }
 
 .hero-visual::before {
   content: '';
   position: absolute;
-  inset: 0 auto auto 12%;
-  width: 76%;
+  inset: 6% auto auto 16%;
+  width: 70%;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 2px solid rgba(25, 201, 232, 0.55);
+  border: 1.5px solid rgba(25, 201, 232, 0.28);
+  opacity: 0.55;
 }
 
 .hero-media-card,
@@ -468,13 +510,14 @@
 
 .section-heading {
   max-width: 66rem;
-  margin: 0 auto 28px;
+  margin: 0 auto 34px;
   text-align: center;
 }
 
 .section-heading p {
   max-width: 58ch;
   margin-inline: auto;
+  line-height: 1.75;
 }
 
 .section-heading h2,
@@ -483,6 +526,12 @@
   margin: 0 0 12px;
   font-size: clamp(2rem, 4.2vw, 3.45rem);
   line-height: 0.9;
+}
+
+.section-heading h2 + p,
+.coverage-card h2 + p,
+.cta-band h2 + p {
+  margin-top: 12px;
 }
 
 .section-heading.narrow {
@@ -497,7 +546,7 @@
 
 .service-card {
   display: grid;
-  gap: 18px;
+  gap: 16px;
   padding: 22px;
   background:
     radial-gradient(circle at top right, rgba(126, 234, 246, 0.22), transparent 42%),
@@ -520,7 +569,7 @@
 .service-header {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .service-header h3,
@@ -579,8 +628,8 @@
 
 .showcase-tab {
   display: grid;
-  gap: 8px;
-  padding: 22px;
+  gap: 10px;
+  padding: 24px;
   text-align: left;
   cursor: pointer;
 }
@@ -605,13 +654,17 @@
 
 .showcase-card {
   display: grid;
-  gap: 22px;
+  gap: 20px;
   padding: 18px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 250, 0.95));
 }
 
 .showcase-card-copy {
-  padding: 6px 10px 10px;
+  padding: 4px 12px 12px;
+}
+
+.showcase-card-copy p {
+  margin-top: 10px;
 }
 
 .process-grid,
@@ -627,9 +680,13 @@
 
 .process-card {
   display: grid;
-  gap: 16px;
-  padding: 22px;
+  gap: 12px;
+  padding: 24px 22px;
   text-align: center;
+}
+
+.process-card p {
+  margin-top: 2px;
 }
 
 .process-number {
@@ -653,7 +710,7 @@
 .insight-panel,
 .conditions-panel,
 .coverage-card {
-  padding: 26px;
+  padding: 28px;
 }
 
 .social-proof-grid,
@@ -664,8 +721,8 @@
 .social-proof-card,
 .care-guide-card {
   display: grid;
-  gap: 8px;
-  padding: 18px;
+  gap: 10px;
+  padding: 20px;
   border-radius: 22px;
   border: 1px solid rgba(13, 13, 13, 0.08);
   background: linear-gradient(180deg, rgba(126, 234, 246, 0.14), rgba(255, 255, 255, 1));
@@ -704,7 +761,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 20px 22px;
+  padding: 22px 24px;
   border: 0;
   background: transparent;
   color: var(--color-black);
@@ -723,7 +780,7 @@
 .faq-content p {
   overflow: hidden;
   margin: 0;
-  padding: 0 22px;
+  padding: 0 24px;
 }
 
 .faq-content.open {
@@ -788,6 +845,7 @@
 .footer-column li,
 .footer-bottom {
   font-size: 0.96rem;
+  line-height: 1.72;
 }
 
 .footer-bottom {
@@ -956,7 +1014,7 @@
   }
 
   .hero-section {
-    gap: 26px;
+    gap: 28px;
   }
 
   .hero-copy h1 {
@@ -1014,6 +1072,16 @@
     width: 32px;
     height: 32px;
     margin-bottom: 8px;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2,
+  .coverage-card h2,
+  .cta-band h2 {
+    line-height: 0.95;
   }
 
   .services-grid,
