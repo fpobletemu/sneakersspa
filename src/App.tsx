@@ -568,8 +568,9 @@ function App() {
             <p className="eyebrow">Cobertura y retiro</p>
             <h2>La logística también tiene que ser clara.</h2>
             <p>
-              Puntos de encuentro desde Hospital Sotero del Río hasta Mirador por
-              $2.000. Retiro gratuito en La Florida y Puente Alto, previa coordinación.
+              El retiro se puede coordinar en cualquier estación de Metro entre Plaza de
+              Puente Alto, Línea 4, y Mirador, Línea 5, por $2.000. También contamos con
+              retiro gratuito en La Florida y Puente Alto, previa coordinación.
             </p>
           </div>
           <div className="coverage-card accent">

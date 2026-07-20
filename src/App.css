@@ -211,15 +211,15 @@
 
 .hero-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.94fr) minmax(340px, 1.06fr);
-  gap: clamp(30px, 5vw, 70px);
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
+  gap: clamp(28px, 4vw, 52px);
   padding-top: clamp(34px, 5.5vw, 72px);
   padding-bottom: 20px;
   align-items: center;
 }
 
 .hero-copy {
-  max-width: 560px;
+  max-width: 640px;
 }
 
 .hero-copy h1,
@@ -339,8 +339,7 @@
 }
 
 .trust-list li {
-  position: relative;
-  padding-top: 14px;
+  padding-top: 0;
   color: var(--color-dark-gray);
   text-align: center;
   font-size: 0.78rem;
@@ -350,32 +349,11 @@
   text-transform: uppercase;
 }
 
-.trust-list li::before {
-  content: '';
-  display: block;
-  width: 36px;
-  height: 36px;
-  margin: 0 auto 10px;
-  border-radius: 50%;
-  border: 1px solid rgba(25, 201, 232, 0.4);
-  background: radial-gradient(circle at 30% 30%, rgba(126, 234, 246, 0.32), rgba(255, 255, 255, 0.2));
-}
-
 .hero-visual {
   position: relative;
   padding: 10px 0 22px;
-  overflow: hidden;
-}
-
-.hero-visual::before {
-  content: '';
-  position: absolute;
-  inset: 6% auto auto 16%;
-  width: 70%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 1.5px solid rgba(25, 201, 232, 0.28);
-  opacity: 0.55;
+  justify-self: end;
+  width: min(100%, 620px);
 }
 
 .hero-media-card,
@@ -471,18 +449,6 @@
 .benefits-strip article {
   padding: 20px 18px;
   text-align: center;
-  position: relative;
-}
-
-.benefits-strip article::before {
-  content: '';
-  display: block;
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 14px;
-  border-radius: 50%;
-  border: 1px solid rgba(25, 201, 232, 0.3);
-  background: linear-gradient(180deg, rgba(126, 234, 246, 0.16), rgba(255, 255, 255, 1));
 }
 
 .benefits-strip strong,
@@ -728,6 +694,10 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.coverage-section {
+  padding-top: 84px;
+}
+
 .insight-panel,
 .conditions-panel,
 .coverage-card {
@@ -754,6 +724,10 @@
 .social-proof-grid,
 .care-guide-grid {
   grid-template-columns: 1fr;
+}
+
+.care-guide-grid {
+  gap: 18px;
 }
 
 .social-proof-card,
@@ -935,6 +909,10 @@
     margin-top: 14px;
   }
 
+  .coverage-section {
+    padding-top: 72px;
+  }
+
   .cta-band {
     display: grid;
   }
@@ -1113,13 +1091,7 @@
 
   .trust-list li {
     font-size: 0.72rem;
-    padding-top: 12px;
-  }
-
-  .trust-list li::before {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 8px;
+    padding-top: 0;
   }
 
   .section-heading {
