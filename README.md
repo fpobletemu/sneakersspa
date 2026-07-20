@@ -158,7 +158,9 @@ El workflow ya incluye:
 VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
-4. Para GitHub Actions, agrega ese valor como secret o variable del repositorio y luego, si quieres dejarlo automatizado, incorpora esa variable en el workflow.
+4. En GitHub, abre el repositorio y ve a `Settings > Secrets and variables > Actions`.
+5. Crea una variable de repositorio llamada `VITE_GA_MEASUREMENT_ID` con tu valor real.
+6. El workflow ya esta preparado para tomar esa variable automaticamente en el build de GitHub Pages.
 
 ## Estructura principal
 
