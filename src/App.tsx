@@ -196,6 +196,9 @@ const navLinks = [
 const buildWhatsAppLink = (message: string) =>
   `https://wa.me/56988204697?text=${encodeURIComponent(message)}`
 
+const buildServiceInquiryMessage = (serviceName: string) =>
+  `Hola Sneakers' Spa, quiero agendar el servicio de ${serviceName}.\n\nPor favor, ayúdame con la disponibilidad y el proceso de retiro.`
+
 function App() {
   const [openFaq, setOpenFaq] = useState<string>(faqs[0].id)
   const [activeShowcase, setActiveShowcase] = useState<string>(showcaseCases[0].id)
@@ -428,9 +431,7 @@ function App() {
                 <p className="service-best-for">{service.bestFor}</p>
                 <a
                   className="service-link"
-                  href={buildWhatsAppLink(
-                    `Hola Sneakers' Spa, quiero agendar o consultar por el servicio ${service.name}.`,
-                  )}
+                  href={buildWhatsAppLink(buildServiceInquiryMessage(service.name))}
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => {
@@ -438,6 +439,7 @@ function App() {
                     handleWhatsAppClick('services', service.id)
                   }}
                 >
+                  <span aria-hidden="true">✦</span>
                   Agendar este servicio
                 </a>
               </article>
