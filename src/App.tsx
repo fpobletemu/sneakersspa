@@ -193,12 +193,13 @@ const careGuide = [
   },
 ] as const
 
-const serviceConditions = [
-  'La evaluación previa se realiza por WhatsApp para definir el tratamiento adecuado.',
-  'Los tiempos de entrega pueden variar según el material, el nivel de suciedad y las reparaciones adicionales.',
-  'Las manchas antiguas, peladuras severas u oxidaciones profundas pueden mejorar sin desaparecer al 100%.',
-  'El retiro en estaciones fuera del tramo definido se revisa caso a caso antes de confirmar.',
-] as const
+const servicePromise = {
+  title: 'Nuestra Promesa de Cuidado y Transparencia',
+  details:
+    'Tratamos cada par de zapatillas con la máxima dedicación. Ten en cuenta que en calzados con suciedad extrema, manchas difíciles o desgaste por el tiempo, la limpieza profunda puede hacer más evidentes detalles preexistentes como decoloración o variaciones en la textura de las superficies (cuero, gamuza, lona o gomas).',
+  guarantee:
+    'Tu tranquilidad es lo primero: siempre evaluamos el estado de tu calzado antes de comenzar y te avisaremos si existe algún riesgo. Además, cuentas con un plazo de 24 horas desde la entrega para reportar cualquier disconformidad con el servicio. Nos aseguraremos de que quedes 100% satisfecho con tus pares.',
+} as const
 
 const contactLinks = [
   {
@@ -279,11 +280,7 @@ const SocialIcon = ({ name }: { name: SocialIconName }) => {
 
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        fill="currentColor"
-        stroke="none"
-        d="M13.35 3.2V13.1C13.35 14.65 12.08 15.92 10.53 15.92C8.98 15.92 7.71 14.65 7.71 13.1C7.71 11.56 8.98 10.28 10.53 10.28C10.84 10.28 11.12 10.33 11.4 10.42V7.96C11.11 7.91 10.82 7.89 10.53 7.89C7.65 7.89 5.32 10.22 5.32 13.1C5.32 15.99 7.65 18.32 10.53 18.32C13.42 18.32 15.75 15.99 15.75 13.1V8.08C16.71 8.76 17.88 9.15 19.1 9.16V6.77C17.89 6.72 16.77 6.2 16.01 5.34C15.28 4.51 14.9 3.45 14.9 2.36H13.85C13.57 2.36 13.35 2.58 13.35 2.86V3.2Z"
-      />
+      <path d="M14.1 4.1V13.2C14.1 14.92 12.72 16.3 11 16.3C9.28 16.3 7.9 14.92 7.9 13.2C7.9 11.48 9.28 10.1 11 10.1C11.26 10.1 11.52 10.13 11.76 10.2V7.9C11.51 7.86 11.26 7.84 11 7.84C8.03 7.84 5.6 10.26 5.6 13.24C5.6 16.22 8.03 18.64 11 18.64C13.98 18.64 16.4 16.22 16.4 13.24V8.66C17.44 9.39 18.68 9.81 20 9.83V7.55C18.58 7.43 17.29 6.64 16.59 5.48C16.33 5.06 16.16 4.59 16.1 4.1H14.1Z" />
     </svg>
   )
 }
@@ -673,15 +670,13 @@ function App() {
         <section className="section-frame conditions-section" aria-labelledby="conditions-title">
           <div className="section-heading narrow">
             <p className="eyebrow">Condiciones del servicio</p>
-            <h2 id="conditions-title">Un servicio serio necesita límites y criterios claros.</h2>
+            <h2 id="conditions-title">Cuidado profesional con claridad y acompañamiento.</h2>
           </div>
 
           <div className="conditions-panel">
-            <ul>
-              {serviceConditions.map((condition) => (
-                <li key={condition}>{condition}</li>
-              ))}
-            </ul>
+            <h3>{servicePromise.title}</h3>
+            <p>{servicePromise.details}</p>
+            <p>{servicePromise.guarantee}</p>
           </div>
         </section>
 
@@ -776,9 +771,7 @@ function App() {
                   rel="noreferrer"
                   onClick={() => handleContactClick(link.name.toLowerCase())}
                 >
-                  <span className="social-handle-icon" aria-hidden="true">
-                    <SocialIcon name={link.icon} />
-                  </span>
+                  <SocialIcon name={link.icon} />
                   <strong>{link.username}</strong>
                 </a>
               </li>
