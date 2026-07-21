@@ -64,11 +64,6 @@ const addOns = [
       'Opción A ($2.990): lavado y blanqueado profundo. Opción B ($4.990): reemplazo por cordones nuevos.',
   },
   {
-    title: 'Control de olores (UV/Ozono)',
-    price: 'Según evaluación',
-    description: 'Tratamiento germicida para eliminar hongos y bacterias de raíz.',
-  },
-  {
     title: 'Reparación estructural ligera',
     price: 'Cotización según caso',
     description: 'Pegado de suelas o despegues puntuales.',
