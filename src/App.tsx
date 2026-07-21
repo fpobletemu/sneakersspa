@@ -8,57 +8,71 @@ import { initAnalytics, trackEvent, trackPageView } from './lib/analytics'
 
 const services = [
   {
-    id: 'limpieza-estandar',
-    name: 'Limpieza estándar',
+    id: 'limpieza-express',
+    name: 'Limpieza Express',
     price: '$9.990',
     description:
-      'Limpieza exterior rápida para capellada, entresuela y cordones en uso diario.',
-    bestFor: 'Ideal para polvo, suciedad leve y mantenimiento regular.',
-    badge: 'Entrada',
+      'Mantenimiento rápido por fuera. Incluye capellada, cordones y limpieza exterior de la suela.',
+    bestFor: 'Uso diario y suciedad ligera.',
+    badges: ['LIMPIEZA EXTERIOR', 'RÁPIDO', 'LONA, CUERO SINTÉTICO O MALLA'],
   },
   {
     id: 'limpieza-profunda',
-    name: 'Limpieza profunda',
+    name: 'Limpieza Profunda',
     price: '$12.990',
     description:
-      'Sanitización integral por dentro y por fuera, con foco en suela, interior y olores.',
-    bestFor: 'Para uso prolongado, manchas acumuladas y suciedad incrustada.',
-    badge: 'Más pedido',
+      'Sanitización integral por dentro y por fuera. Desinfección interior, lavado exhaustivo de entresuela y detalle de suela.',
+    bestFor: 'Calzado con uso prolongado, olores o acumulación de suciedad.',
+    badges: ['LAVADO INTERIOR Y PLANTILLA', 'SANITIZADO ANTIBACTERIAL', 'DETALLADO EXHAUSTIVO DE PLANTA'],
   },
   {
     id: 'gamuza-nobuck-estandar',
-    name: 'Gamuza y nobuck estándar',
+    name: 'Gamuza & Nobuck Estándar',
     price: '$14.990',
     description:
-      'Tratamiento en seco para preservar textura, color y acabado delicado.',
-    bestFor: 'Recomendado para mantener la gamuza limpia, peinada y uniforme.',
-    badge: 'Material delicado',
+      'Tratamiento premium en seco para cuidar la textura delicada y revivir el color sin riesgo de daño por agua.',
+    bestFor: 'Mantener gamuza o nobuck limpio, peinado y protegido.',
+    badges: ['TRATAMIENTO EN SECO', 'PEINADO Y RECONSTITUCIÓN DE FIBRA', 'REACTIVACIÓN DE TONO'],
   },
   {
     id: 'gamuza-profunda',
-    name: 'Gamuza profunda',
+    name: 'Gamuza Profunda',
     price: '$17.990',
     description:
-      'Shampoo especializado y protector impermeabilizante antimanchas.',
-    bestFor: 'Cuando la gamuza necesita rescate y protección adicional.',
-    badge: 'Premium',
-  },
-  {
-    id: 'unyellowing',
-    name: 'Servicio unyellowing',
-    price: '$15.990',
-    description:
-      'Proceso químico y térmico para revertir la oxidación en suelas amarillentas.',
-    bestFor: 'Pensado para devolver un tono limpio a gomas envejecidas.',
-    badge: 'Restauración',
+      'Limpieza avanzada con shampoo especializado de gamuza y aplicación de protector impermeabilizante anti-manchas.',
+    bestFor: 'Gamuza con manchas difíciles o suciedad profunda.',
+    badges: ['SHAMPOO ESPECIALIZADO DE GAMUZA', 'DESMANCHADO AVANZADO', 'CAPA PROTECTORA IMPERMEABILIZANTE'],
   },
 ] as const
 
 const addOns = [
-  'Restauración y coloración de cuero desde $5.990.',
-  'Cambio o lavado premium de cordones entre $2.990 y $4.990.',
-  'Desinfección y eliminación extrema de olores con tratamiento germicida.',
-  'Reparación estructural ligera para despegues puntuales y bordes.',
+  {
+    title: 'Unyellowing',
+    price: '+$5.990',
+    description:
+      'Proceso químico y térmico que revierte la oxidación de la goma y devuelve el blanco original.',
+  },
+  {
+    title: 'Leather Restoration',
+    price: '+$5.990',
+    description: 'Reparación de grietas, raspones y peladuras en cuero.',
+  },
+  {
+    title: 'Laces Service',
+    price: '$2.990 - $4.990',
+    description:
+      'Opción A ($2.990): lavado y blanqueado profundo. Opción B ($4.990): reemplazo por cordones nuevos.',
+  },
+  {
+    title: 'Odor Control (UV/Ozone)',
+    price: 'Según evaluación',
+    description: 'Tratamiento germicida para eliminar hongos y bacterias de raíz.',
+  },
+  {
+    title: 'Light Structural Repair',
+    price: 'Cotización según caso',
+    description: 'Pegado de suelas o despegues puntuales.',
+  },
 ] as const
 
 const processSteps = [
@@ -107,25 +121,36 @@ const faqs = [
   {
     id: 'faq-entrega',
     question: '¿Cuánto tiempo se demoran en entregar mis zapatillas?',
-    answer:
-      'El tiempo estimado es de 3 a 5 días hábiles, dependiendo del tratamiento y del nivel de suciedad o daño.',
-  },
-  {
-    id: 'faq-pagos',
-    question: '¿Qué métodos de pago aceptan?',
-    answer: 'Aceptamos transferencias bancarias directas y también pago en efectivo.',
+    answer: 'Entre 3 y 5 días hábiles. Incluye secado seguro y control de calidad antes de la entrega.',
   },
   {
     id: 'faq-retiro',
     question: '¿Cómo funciona el retiro y la entrega?',
     answer:
-      'Coordinamos puntos de encuentro desde Hospital Sotero del Río hasta Mirador por $2.000, y retiro gratuito en La Florida o Puente Alto, previa coordinación.',
+      'Coordinamos retiro local de forma directa. Para regiones, enviamos por Starken o Chilexpress en empaque e-commerce sellado.',
+  },
+  {
+    id: 'faq-servicios',
+    question: '¿Cuál es la diferencia entre limpieza express y profunda?',
+    answer:
+      'Express ($9.990) considera limpieza exterior. Profunda ($12.990) incluye interior, plantilla, sanitizado antibacterial y detallado de suela.',
+  },
+  {
+    id: 'faq-garantia',
+    question: '¿Tienen garantía?',
+    answer:
+      'Sí. Tienes 24 horas posteriores a la entrega para reportar cualquier detalle y lo corregimos sin costo.',
+  },
+  {
+    id: 'faq-pagos',
+    question: '¿Qué métodos de pago aceptan?',
+    answer: 'Transferencia bancaria directa.',
   },
   {
     id: 'faq-materiales',
-    question: '¿Trabajan cuero, gamuza y nobuck?',
+    question: '¿Reciben todas las marcas y materiales?',
     answer:
-      'Sí. Cada material requiere un tratamiento distinto, por eso evaluamos el par antes de definir el proceso adecuado.',
+      'Sí. Trabajamos cuero, lona, malla, sintéticos, gamuza y nobuck con protocolos según material.',
   },
 ] as const
 
@@ -193,6 +218,19 @@ const careGuide = [
   },
 ] as const
 
+const logistics = {
+  freePickup: [
+    'La Florida: lunes a domingo (coordinación previa), cerca de Metro Mirador.',
+    'Puente Alto: lunes a domingo (coordinación previa), cerca de Metro Sótero del Río.',
+  ],
+  metroFee: '$2.000 tarifa plana',
+  metroSegment: 'Plaza de Puente Alto a Mirador',
+  line4:
+    'Plaza de Puente Alto, Hospital Sótero del Río, Elisa Correa, Los Quillayes, San José de la Estrella, Trinidad, Rojas Magallanes y Vicente Valdés.',
+  line5: 'Bellavista de La Florida y Mirador.',
+  regionalShipping: 'Despachos a regiones vía Starken (pago en destino).',
+} as const
+
 const servicePromise = {
   title: 'Nuestra Promesa de Cuidado y Transparencia',
   details:
@@ -200,6 +238,9 @@ const servicePromise = {
   guarantee:
     'Tu tranquilidad es lo primero: siempre evaluamos el estado de tu calzado antes de comenzar y te avisaremos si existe algún riesgo. Además, cuentas con un plazo de 24 horas desde la entrega para reportar cualquier disconformidad con el servicio. Nos aseguraremos de que quedes 100% satisfecho con tus pares.',
 } as const
+
+const transparencyDisclaimer =
+  'Tratamos cada par con la máxima dedicación y un enfoque 100% personalizado. En calzados con uso intensivo o suciedad acumulada, nuestro servicio logrará una renovación profunda en higiene y estética. Al retirar las capas de suciedad, el material recupera su estado real y quedan a la vista los detalles propios del tiempo en superficies como cuero, gamuza, lona o goma. Para tu total tranquilidad, realizamos una evaluación inicial de tus pares antes de comenzar para confirmarte el resultado esperado.'
 
 const contactLinks = [
   {
@@ -280,7 +321,7 @@ const SocialIcon = ({ name }: { name: SocialIconName }) => {
 
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M14.1 4.1V13.2C14.1 14.92 12.72 16.3 11 16.3C9.28 16.3 7.9 14.92 7.9 13.2C7.9 11.48 9.28 10.1 11 10.1C11.26 10.1 11.52 10.13 11.76 10.2V7.9C11.51 7.86 11.26 7.84 11 7.84C8.03 7.84 5.6 10.26 5.6 13.24C5.6 16.22 8.03 18.64 11 18.64C13.98 18.64 16.4 16.22 16.4 13.24V8.66C17.44 9.39 18.68 9.81 20 9.83V7.55C18.58 7.43 17.29 6.64 16.59 5.48C16.33 5.06 16.16 4.59 16.1 4.1H14.1Z" />
+      <path d="M15.2 3.6C15.3 4.5 15.75 5.34 16.45 5.95C17.15 6.57 18.05 6.9 18.98 6.87V9.1C17.87 9.11 16.8 8.8 15.87 8.22V13.17C15.87 15.68 13.83 17.72 11.32 17.72C8.81 17.72 6.77 15.68 6.77 13.17C6.77 10.66 8.81 8.62 11.32 8.62C11.52 8.62 11.72 8.63 11.92 8.67V10.93C11.73 10.86 11.52 10.83 11.32 10.83C10.03 10.83 8.98 11.88 8.98 13.17C8.98 14.46 10.03 15.51 11.32 15.51C12.62 15.51 13.66 14.46 13.66 13.17V3.6H15.2Z" />
     </svg>
   )
 }
@@ -431,26 +472,23 @@ function App() {
         <section className="hero-section section-frame">
           <div className="hero-copy">
             <p className="eyebrow">Limpieza, restauración y cuidado profesional</p>
-            <h1>
-              El cuidado que <span className="hero-highlight">tus sneakers</span> merecen.
-            </h1>
+            <h1>Devuélvele la vida a tus zapatillas favoritas.</h1>
             <p className="hero-text">
-              Devolvemos a tus zapatillas su mejor versión con limpieza profunda y
-              productos premium.
+              Limpieza, restauración y cuidado profesional para tu calzado en Chile.
             </p>
 
             <div className="hero-actions">
+              <a className="button button-primary" href="#servicios">
+                Ver Servicios y Precios
+              </a>
               <a
-                className="button button-primary"
+                className="button button-secondary"
                   href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero cotizar limpieza o restauración para mis zapatillas.')}
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => handleWhatsAppClick('hero')}
               >
-                Agenda tu servicio
-              </a>
-              <a className="button button-secondary" href="#servicios">
-                Ver servicios
+                📲 Agendar por WhatsApp
               </a>
             </div>
 
@@ -496,23 +534,29 @@ function App() {
         <section className="section-frame services-section" id="servicios">
           <div className="section-heading">
             <p className="eyebrow">Nuestros servicios</p>
-            <h2>Tratamientos claros para distintos niveles de suciedad y restauración.</h2>
+            <h2>Servicios y precios claros para devolverle vida a tus zapatillas.</h2>
             <p>
-              Cada servicio responde a un problema específico. La idea no es vender de más,
-              sino derivarte al tratamiento que realmente necesita tu par.
+              Todos nuestros servicios incluyen lavado estándar de cordones y limpieza de suela.
+            </p>
+            <p className="service-global-note">
+              Cada servicio se recomienda según material, nivel de suciedad y estado real del par.
             </p>
           </div>
 
           <div className="services-grid">
             {services.map((service) => (
               <article className="service-card" key={service.id}>
-                <span className="service-badge">{service.badge}</span>
                 <div className="service-header">
                   <h3>{service.name}</h3>
                   <strong>{service.price}</strong>
                 </div>
                 <p>{service.description}</p>
                 <p className="service-best-for">{service.bestFor}</p>
+                <ul className="service-includes" aria-label={`Incluye ${service.name}`}>
+                  {service.badges.map((badge) => (
+                    <li key={badge}>✓ {badge}</li>
+                  ))}
+                </ul>
                 <a
                   className="button service-link"
                   href={buildWhatsAppLink(buildServiceInquiryMessage(service.name))}
@@ -532,11 +576,15 @@ function App() {
           <div className="addon-panel">
             <div>
               <p className="eyebrow">Adicionales y restauración</p>
-                <h3>Complementos pensados para recuperar presencia y durabilidad.</h3>
+                <h3>Complementos para casos especiales y restauración.</h3>
             </div>
             <ul>
               {addOns.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item.title} className="addon-item">
+                  <strong>{item.title}</strong>
+                  <span>{item.price}</span>
+                  <p>{item.description}</p>
+                </li>
               ))}
             </ul>
           </div>
@@ -649,28 +697,31 @@ function App() {
 
         <section className="section-frame coverage-section">
           <div className="coverage-card">
-            <p className="eyebrow">Cobertura y retiro</p>
-            <h2>La logística también tiene que ser clara.</h2>
-            <p>
-              El retiro se puede coordinar en cualquier estación de Metro entre Plaza de
-              Puente Alto, Línea 4, y Mirador, Línea 5, por $2.000. También contamos con
-              retiro gratuito en La Florida y Puente Alto, previa coordinación.
-            </p>
+            <p className="eyebrow">Retiro gratuito</p>
+            <h2>Puntos de retiro sin costo en comunas clave.</h2>
+            <ul className="coverage-list">
+              {logistics.freePickup.map((point) => (
+                <li key={point}>📍 {point}</li>
+              ))}
+            </ul>
           </div>
-          <div className="coverage-card accent">
-            <p className="eyebrow">Materiales y límites</p>
-            <h2>Tratamos cada par según el material, el desgaste y la posibilidad real de mejora.</h2>
-            <p>
-              No todos los daños revierten igual. Por eso la evaluación por WhatsApp, antes de
-              confirmar el trabajo, es parte central del proceso.
-            </p>
+          <div className="coverage-card">
+            <p className="eyebrow">Entrega en Metro</p>
+            <h2>{logistics.metroFee} en el tramo {logistics.metroSegment}.</h2>
+            <p><strong>L4:</strong> {logistics.line4}</p>
+            <p><strong>L5:</strong> {logistics.line5}</p>
+          </div>
+          <div className="coverage-card accent full-width">
+            <p className="eyebrow">Envíos a regiones</p>
+            <h2>También trabajamos fuera de Santiago.</h2>
+            <p>{logistics.regionalShipping}</p>
           </div>
         </section>
 
         <section className="section-frame conditions-section" aria-labelledby="conditions-title">
           <div className="section-heading narrow">
             <p className="eyebrow">Condiciones del servicio</p>
-            <h2 id="conditions-title">Cuidado profesional con claridad y acompañamiento.</h2>
+            <h2 id="conditions-title">Cuidado profesional con transparencia y respaldo real.</h2>
           </div>
 
           <div className="conditions-panel">
@@ -678,6 +729,10 @@ function App() {
             <p>{servicePromise.details}</p>
             <p>{servicePromise.guarantee}</p>
           </div>
+        </section>
+
+        <section className="transparency-banner section-frame" aria-label="Promesa de transparencia">
+          <p>{transparencyDisclaimer}</p>
         </section>
 
         <section className="section-frame faq-section" id="faq">
@@ -791,9 +846,7 @@ function App() {
         aria-label="Agendar por WhatsApp"
         onClick={() => handleWhatsAppClick('sticky-mobile')}
       >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M19.05 4.94C17.19 3.08 14.72 2.06 12.08 2.06C6.62 2.06 2.18 6.5 2.18 11.96C2.18 13.71 2.64 15.42 3.5 16.94L2 22L7.19 20.63C8.64 21.42 10.27 21.84 11.98 21.84H11.99C17.45 21.84 21.89 17.4 21.89 11.94C21.9 9.3 20.9 6.81 19.05 4.94ZM11.99 20.17H11.98C10.5 20.17 9.06 19.78 7.8 19.05L7.51 18.88L4.43 19.69L5.25 16.69L5.06 16.38C4.25 15.09 3.82 13.59 3.83 12C3.83 7.46 7.53 3.77 12.08 3.77C14.27 3.77 16.33 4.62 17.87 6.16C19.4 7.7 20.25 9.75 20.25 11.94C20.24 16.48 16.54 20.17 11.99 20.17ZM16.51 13.99C16.26 13.86 15.03 13.26 14.81 13.18C14.58 13.1 14.42 13.05 14.25 13.3C14.08 13.55 13.59 14.15 13.44 14.32C13.3 14.49 13.15 14.51 12.89 14.38C12.64 14.25 11.81 13.98 10.82 13.1C10.04 12.4 9.51 11.54 9.36 11.29C9.22 11.04 9.34 10.91 9.47 10.79C9.58 10.68 9.72 10.5 9.84 10.36C9.96 10.22 10.01 10.11 10.09 9.94C10.17 9.77 10.13 9.62 10.07 9.5C10.01 9.37 9.51 8.15 9.3 7.64C9.1 7.15 8.89 7.22 8.74 7.21L8.32 7.2C8.15 7.2 7.89 7.26 7.66 7.51C7.44 7.76 6.8 8.36 6.8 9.58C6.8 10.8 7.69 11.97 7.82 12.13C7.94 12.3 9.56 14.8 12.04 15.87C12.63 16.13 13.1 16.28 13.47 16.4C14.06 16.58 14.59 16.56 15.01 16.5C15.48 16.43 16.45 15.9 16.65 15.35C16.85 14.8 16.85 14.34 16.78 14.23C16.7 14.11 16.56 14.06 16.51 13.99Z" />
-        </svg>
+        📲 Agendar por WhatsApp
       </a>
     </div>
   )

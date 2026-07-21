@@ -17,13 +17,13 @@ describe('App', () => {
   it('renders the core landing sections and service cards', () => {
     render(<App />)
 
-    expect(screen.getByRole('heading', { name: /el cuidado que tus sneakers merecen/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /devuélvele la vida a tus zapatillas favoritas/i })).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: /principal/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /tratamientos claros/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /servicios y precios claros/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /un flujo simple/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /respuestas directas/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /lo que conviene saber/i })).toBeInTheDocument()
-    expect(screen.getAllByText(/agendar este servicio/i)).toHaveLength(5)
+    expect(screen.getAllByText(/agendar este servicio/i)).toHaveLength(4)
   })
 
   it('initializes analytics and tracks the first page view', () => {
@@ -40,7 +40,7 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: /qué métodos de pago aceptan/i }))
 
     expect(trackEvent).toHaveBeenCalledWith('faq_open', { faq_id: 'faq-pagos' })
-    expect(screen.getByText(/transferencias bancarias directas/i)).toBeInTheDocument()
+    expect(screen.getByText(/transferencia bancaria directa/i)).toBeInTheDocument()
   })
 
   it('changes the showcase case and tracks the interaction', async () => {
