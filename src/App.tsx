@@ -135,6 +135,29 @@ const trustPoints = [
   'Cuidado especializado para cuero, gamuza, nobuck y suelas.',
 ] as const
 
+const benefitCards = [
+  {
+    icon: 'clean',
+    title: 'Limpieza profunda',
+    description: 'Eliminamos suciedad incrustada, manchas y olores para recuperar presencia.',
+  },
+  {
+    icon: 'premium',
+    title: 'Productos premium',
+    description: 'Usamos insumos especializados para cuidar materiales y prolongar la vida útil.',
+  },
+  {
+    icon: 'dry',
+    title: 'Secado seguro',
+    description: 'Controlamos el secado para proteger forma, color y materiales delicados.',
+  },
+  {
+    icon: 'material',
+    title: 'Cuidado especializado',
+    description: 'Atención dedicada a cuero, gamuza, nobuck y combinaciones sensibles.',
+  },
+] as const
+
 const socialLinks = [
   {
     name: 'Instagram',
@@ -198,6 +221,45 @@ const buildWhatsAppLink = (message: string) =>
 
 const buildServiceInquiryMessage = (serviceName: string) =>
   `Hola Sneakers' Spa, quiero agendar el servicio de ${serviceName}.\n\nPor favor, ayúdame con la disponibilidad y el proceso de retiro.`
+
+type BenefitIconName = (typeof benefitCards)[number]['icon']
+
+const BenefitIcon = ({ name }: { name: BenefitIconName }) => {
+  if (name === 'clean') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 3L13.9 8.1L19 10L13.9 11.9L12 17L10.1 11.9L5 10L10.1 8.1L12 3Z" />
+      </svg>
+    )
+  }
+
+  if (name === 'premium') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 17L6.7 8.5L12 13L17.3 8.5L20 17H4Z" />
+        <path d="M7.2 7.2C7.86274 7.2 8.4 6.66274 8.4 6C8.4 5.33726 7.86274 4.8 7.2 4.8C6.53726 4.8 6 5.33726 6 6C6 6.66274 6.53726 7.2 7.2 7.2Z" />
+        <path d="M16.8 7.2C17.4627 7.2 18 6.66274 18 6C18 5.33726 17.4627 4.8 16.8 4.8C16.1373 4.8 15.6 5.33726 15.6 6C15.6 6.66274 16.1373 7.2 16.8 7.2Z" />
+      </svg>
+    )
+  }
+
+  if (name === 'dry') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 4C8.8 8.2 7.2 10.5 7.2 13C7.2 15.651 9.349 17.8 12 17.8C14.651 17.8 16.8 15.651 16.8 13C16.8 10.5 15.2 8.2 12 4Z" />
+        <path d="M18 8.2H21" />
+        <path d="M17.2 11.2H20.2" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2L20 6V12C20 17 16.6 21.2 12 22C7.4 21.2 4 17 4 12V6L12 2Z" />
+      <path d="M9.4 11.8L11.2 13.6L14.8 10" />
+    </svg>
+  )
+}
 
 function App() {
   const [openFaq, setOpenFaq] = useState<string>(faqs[0].id)
@@ -368,11 +430,16 @@ function App() {
               </a>
             </div>
 
-            <ul className="trust-list">
-              {trustPoints.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
+            <div className="trust-carousel" aria-label="Puntos clave del servicio">
+              <div className="trust-track">
+                {[...trustPoints, ...trustPoints].map((point, index) => (
+                  <p className="trust-item" key={`${point}-${index}`}>
+                    <span className="trust-dot" aria-hidden="true"></span>
+                    {point}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="hero-visual">
@@ -391,22 +458,15 @@ function App() {
         </section>
 
         <section className="benefits-strip section-frame" aria-label="Ventajas clave">
-          <article>
-            <strong>Limpieza profunda</strong>
-            <p>Eliminamos suciedad incrustada, manchas y olores para recuperar presencia.</p>
-          </article>
-          <article>
-            <strong>Productos premium</strong>
-            <p>Usamos insumos especializados para cuidar materiales y prolongar la vida útil.</p>
-          </article>
-          <article>
-            <strong>Secado seguro</strong>
-            <p>Controlamos el secado para proteger forma, color y materiales delicados.</p>
-          </article>
-          <article>
-            <strong>Cuidado especializado</strong>
-            <p>Atención dedicada a cuero, gamuza, nobuck y combinaciones sensibles.</p>
-          </article>
+          {benefitCards.map((card) => (
+            <article key={card.title}>
+              <span className="benefit-icon" aria-hidden="true">
+                <BenefitIcon name={card.icon} />
+              </span>
+              <strong>{card.title}</strong>
+              <p>{card.description}</p>
+            </article>
+          ))}
         </section>
 
         <section className="section-frame services-section" id="servicios">
