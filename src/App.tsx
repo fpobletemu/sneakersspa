@@ -53,23 +53,23 @@ const addOns = [
       'Proceso químico y térmico que revierte la oxidación de la goma y devuelve el blanco original.',
   },
   {
-    title: 'Leather Restoration',
+    title: 'Restauración de cuero',
     price: '+$5.990',
     description: 'Reparación de grietas, raspones y peladuras en cuero.',
   },
   {
-    title: 'Laces Service',
+    title: 'Servicio de cordones',
     price: '$2.990 - $4.990',
     description:
       'Opción A ($2.990): lavado y blanqueado profundo. Opción B ($4.990): reemplazo por cordones nuevos.',
   },
   {
-    title: 'Odor Control (UV/Ozone)',
+    title: 'Control de olores (UV/Ozono)',
     price: 'Según evaluación',
     description: 'Tratamiento germicida para eliminar hongos y bacterias de raíz.',
   },
   {
-    title: 'Light Structural Repair',
+    title: 'Reparación estructural ligera',
     price: 'Cotización según caso',
     description: 'Pegado de suelas o despegues puntuales.',
   },
