@@ -162,11 +162,15 @@ const socialLinks = [
   {
     name: 'Instagram',
     href: 'https://www.instagram.com/thesneakerspa.cl/',
+    username: '@thesneakerspa.cl',
+    icon: 'instagram',
     caption: 'Antes y después, procesos y resultados en formato corto.',
   },
   {
     name: 'TikTok',
     href: 'https://www.tiktok.com/@sneakers.spa.cl',
+    username: '@sneakers.spa.cl',
+    icon: 'tiktok',
     caption: 'Contenido visual para mostrar limpieza, restauración y detalles.',
   },
 ] as const
@@ -223,6 +227,7 @@ const buildServiceInquiryMessage = (serviceName: string) =>
   `Hola Sneakers' Spa, quiero agendar el servicio de ${serviceName}.\n\nPor favor, ayúdame con la disponibilidad y el proceso de retiro.`
 
 type BenefitIconName = (typeof benefitCards)[number]['icon']
+type SocialIconName = (typeof socialLinks)[number]['icon']
 
 const BenefitIcon = ({ name }: { name: BenefitIconName }) => {
   if (name === 'clean') {
@@ -257,6 +262,29 @@ const BenefitIcon = ({ name }: { name: BenefitIconName }) => {
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M12 2L20 6V12C20 17 16.6 21.2 12 22C7.4 21.2 4 17 4 12V6L12 2Z" />
       <path d="M9.4 11.8L11.2 13.6L14.8 10" />
+    </svg>
+  )
+}
+
+const SocialIcon = ({ name }: { name: SocialIconName }) => {
+  if (name === 'instagram') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+        <path d="M12 15.8C14.099 15.8 15.8 14.099 15.8 12C15.8 9.90132 14.099 8.2 12 8.2C9.90132 8.2 8.2 9.90132 8.2 12C8.2 14.099 9.90132 15.8 12 15.8Z" />
+        <path d="M16.9 7.2H16.92" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M9.2 10.1V9C9.2 7.01177 10.8118 5.4 12.8 5.4V5.4" />
+      <path d="M10.6 10.1H14.6" />
+      <path d="M8.8 11.9V14.2C8.8 16.2987 10.5013 18 12.6 18V18" />
+      <path d="M13.1 10.6C13.1 12.7248 14.8312 14.456 16.956 14.456C17.6402 14.456 18.2829 14.2774 18.84 13.9648V15.3C18.84 16.736 17.676 17.9 16.24 17.9H7.76C6.32406 17.9 5.16 16.736 5.16 15.3V8.7C5.16 7.26406 6.32406 6.1 7.76 6.1H9.4V7.44" />
+      <path d="M18.84 9.96V6.1" />
+      <path d="M16.91 8.03H20.77" />
     </svg>
   )
 }
@@ -743,12 +771,16 @@ function App() {
             {socialLinks.map((link) => (
               <li key={link.name}>
                 <a
+                  className="social-handle-link"
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => handleContactClick(link.name.toLowerCase())}
                 >
-                  {link.name}
+                  <span className="social-handle-icon" aria-hidden="true">
+                    <SocialIcon name={link.icon} />
+                  </span>
+                  <strong>{link.username}</strong>
                 </a>
               </li>
             ))}
@@ -764,9 +796,12 @@ function App() {
         href={buildWhatsAppLink('Hola Sneakers\' Spa, quiero agendar un servicio para mis zapatillas.')}
         target="_blank"
         rel="noreferrer"
+        aria-label="Agendar por WhatsApp"
         onClick={() => handleWhatsAppClick('sticky-mobile')}
       >
-        Agendar por WhatsApp
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19.05 4.94C17.19 3.08 14.72 2.06 12.08 2.06C6.62 2.06 2.18 6.5 2.18 11.96C2.18 13.71 2.64 15.42 3.5 16.94L2 22L7.19 20.63C8.64 21.42 10.27 21.84 11.98 21.84H11.99C17.45 21.84 21.89 17.4 21.89 11.94C21.9 9.3 20.9 6.81 19.05 4.94ZM11.99 20.17H11.98C10.5 20.17 9.06 19.78 7.8 19.05L7.51 18.88L4.43 19.69L5.25 16.69L5.06 16.38C4.25 15.09 3.82 13.59 3.83 12C3.83 7.46 7.53 3.77 12.08 3.77C14.27 3.77 16.33 4.62 17.87 6.16C19.4 7.7 20.25 9.75 20.25 11.94C20.24 16.48 16.54 20.17 11.99 20.17ZM16.51 13.99C16.26 13.86 15.03 13.26 14.81 13.18C14.58 13.1 14.42 13.05 14.25 13.3C14.08 13.55 13.59 14.15 13.44 14.32C13.3 14.49 13.15 14.51 12.89 14.38C12.64 14.25 11.81 13.98 10.82 13.1C10.04 12.4 9.51 11.54 9.36 11.29C9.22 11.04 9.34 10.91 9.47 10.79C9.58 10.68 9.72 10.5 9.84 10.36C9.96 10.22 10.01 10.11 10.09 9.94C10.17 9.77 10.13 9.62 10.07 9.5C10.01 9.37 9.51 8.15 9.3 7.64C9.1 7.15 8.89 7.22 8.74 7.21L8.32 7.2C8.15 7.2 7.89 7.26 7.66 7.51C7.44 7.76 6.8 8.36 6.8 9.58C6.8 10.8 7.69 11.97 7.82 12.13C7.94 12.3 9.56 14.8 12.04 15.87C12.63 16.13 13.1 16.28 13.47 16.4C14.06 16.58 14.59 16.56 15.01 16.5C15.48 16.43 16.45 15.9 16.65 15.35C16.85 14.8 16.85 14.34 16.78 14.23C16.7 14.11 16.56 14.06 16.51 13.99Z" />
+        </svg>
       </a>
     </div>
   )
